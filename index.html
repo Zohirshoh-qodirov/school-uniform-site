@@ -3,30 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Преподаватель английского языка</title>
+  <title>Английский с Ольгой — Курсы английского языка</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <h1>Английский с Ольгой</h1>
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="courses.html">Курсы</a>
-      <a href="about.html">О преподавателе</a>
-      <a href="contact.html">Контакты</a>
-    </nav>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">English with Olga</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Главная</a>
+        <a href="courses.html" class="nav-link">Курсы</a>
+        <a href="about.html" class="nav-link">О преподавателе</a>
+        <a href="contact.html" class="nav-link">Контакты</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="intro">
-      <img src="images/teacher.jpg" alt="Преподаватель" class="teacher-img" />
-      <h2>Изучайте английский легко и с удовольствием!</h2>
-      <p>Присоединяйтесь к моим курсам и достигайте результатов быстро.</p>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h2>Изучайте английский легко и с удовольствием!</h2>
+          <p>Авторские курсы с индивидуальным подходом. Поддержка и практика в удобное время.</p>
+          <a href="courses.html" class="btn-primary">Посмотреть курсы</a>
+        </div>
+        <div class="hero-image">
+          <img src="images/teacher.jpg" alt="Преподаватель английского" />
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Английский с Ольгой</p>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 English with Olga. Все права защищены.</p>
+    </div>
   </footer>
 </body>
 </html>
