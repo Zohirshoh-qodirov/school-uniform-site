@@ -1,67 +1,205 @@
-/* Общие стили */
-body {
-  font-family: 'Arial', sans-serif;
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: #f0f8ff;
+}
+
+/* Шрифты и цвета */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
   color: #333;
+  line-height: 1.6;
 }
 
-header {
-  background: #4a90e2;
-  color: white;
-  padding: 15px;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.intro {
-  max-width: 800px;
-  margin: 30px auto;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 20px;
-  text-align: center;
 }
 
-.teacher-img {
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Хедер */
+.header {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 15px 0;
+  color: #4a90e2;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #4a90e2;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #e91e63;
+}
+
+.nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #e91e63;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  border-radius: 2px;
+  animation: slideIn 0.4s forwards;
+}
+
+@keyframes slideIn {
+  from {width: 0;}
+  to {width: 100%;}
+}
+
+/* Главный экран (hero) */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.hero-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.hero-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #4a90e2;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #e91e63;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #c2185b;
+  box-shadow: 0 6px 20px rgba(194, 24, 91, 0.5);
+}
+
+.hero-image {
+  flex: 1 1 350px;
+  text-align: center;
+  animation: fadeInRight 1s ease forwards;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Футер */
-footer {
+.footer {
+  background: #4a90e2;
+  color: white;
   text-align: center;
-  padding: 15px;
-  background: #ddd;
-  margin-top: 40px;
+  padding: 20px 0;
+  margin-top: 50px;
+  font-weight: 600;
 }
 
-/* Адаптивность для телефонов */
-@media (max-width: 600px) {
-  .teacher-img {
-    width: 100%;
+/* Анимации */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  
+  .hero-text, .hero-image {
+    flex: unset;
     max-width: 100%;
   }
   
-  nav {
-    font-size: 14px;
+  .hero-text h2 {
+    font-size: 2rem;
   }
   
-  header {
-    padding: 10px;
+  .btn-primary {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
   }
   
-  .intro {
-    margin: 20px 10px;
+  .logo {
+    text-align: center;
+    font-size: 1.5rem;
   }
 }
