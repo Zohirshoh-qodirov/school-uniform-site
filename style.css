@@ -2,89 +2,66 @@
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-  background: #fff8f0;
+  padding: 0;
+  background: #f0f8ff;
   color: #333;
 }
 
 header {
-  background-color: #6a994e;
-  padding: 15px 0;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li a {
-  text-decoration: none;
+  background: #4a90e2;
   color: white;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 5px 15px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.menu li a:hover,
-.menu li a.active {
-  background-color: #a7c957;
-  color: #2f5233;
-}
-
-.hero {
+  padding: 15px;
   text-align: center;
-  padding: 80px 20px;
-  background: url('images/flowers-bg.jpg') no-repeat center center/cover;
-  color: #fff;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-}
-
-.hero p {
-  font-size: 22px;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-.btn {
-  background-color: #a7c957;
-  color: #2f5233;
-  padding: 12px 30px;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+nav a {
+  color: white;
+  margin: 0 10px;
   text-decoration: none;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
 }
 
-.btn:hover {
-  background-color: #85a246;
-  color: #fff;
+nav a:hover {
+  text-decoration: underline;
 }
 
-main {
-  max-width: 900px;
-  margin: 40px auto;
+.intro {
+  max-width: 800px;
+  margin: 30px auto;
   padding: 0 20px;
+  text-align: center;
 }
 
-h2 {
-  color: #4a6a2a;
-  margin-bottom: 20px;
-  font-size: 32px;
+.teacher-img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.courses ul {
-  list-style-type: square;
-  padding-left:
+/* Футер */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #ddd;
+  margin-top: 40px;
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 600px) {
+  .teacher-img {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  nav {
+    font-size: 14px;
+  }
+  
+  header {
+    padding: 10px;
+  }
+  
+  .intro {
+    margin: 20px 10px;
+  }
+}
